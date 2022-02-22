@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class UiButtonComponent implements OnInit {
   @Input()
-  classList: string[] = [''];
+  classList: string = '';
 
   @Input()
   buttonType: string = 'button';
