@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ButtonTypes, DropButtons } from '../../ui-types';
 
 @Component({
   selector: 'app-ui-button',
@@ -10,10 +11,13 @@ export class UiButtonComponent implements OnInit {
   classList: string = '';
 
   @Input()
-  buttonType: string = 'button';
+  buttonType: ButtonTypes = 'NEXT';
 
   @Input()
   text: string = '';
+
+  @Input()
+  dropButtons?: DropButtons[];
 
   constructor() { }
 
