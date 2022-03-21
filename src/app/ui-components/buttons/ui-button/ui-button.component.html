@@ -1,3 +1,10 @@
-<button type="{{ buttonType }}" [class]="'btn ' + classList">
-  {{ text }}
-</button>
+<div [ngClass]="orientation === 'LEFT' ? 'buttonBox left' : 'buttonBox right'">
+    <button type="{{ buttonType }}" [class]="'btn ' + classList">
+      {{ text }}
+    </button>
+    <div class="dropdown">
+        <button *ngFor="let dropButton of dropButtons" class="dropButton btn bg-grey color-white hover-green">
+          {{ dropButton.button.text | translate }}
+        </button>
+    </div>
+</div>

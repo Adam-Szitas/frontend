@@ -1,4 +1,8 @@
-export type ButtonTypes = 'SUBMIT' | 'ADD' | 'DELETE' | 'UPDATE' | 'NEXT' | 'NAVBUTTON';
+export type ButtonTypes = 'SUBMIT' | 'ADD' | 'DELETE' | 'UPDATE' | 'NEXT' | 'NAVBUTTON' | 'ICON';
+
+export type TargetPageType = 'NEW_PAGE' | 'THIS_PAGE';
+
+export type OrientationCustomType = 'LEFT' | 'RIGHT';
 
 export interface DropButtons {
   button: DropButton;

@@ -1,0 +1,14 @@
+@import '../../ui-components/espm.colors.scss';
+div.navbar {
+    width: 100%;
+    height: 50px;
+    background-color: $espmBlue;
+    position: relative;
+    z-index: 1;
+    display: block;
+    align-items: center;
+    align-self: center;
+    &>div {
+        width: 100%;
+    }
+}

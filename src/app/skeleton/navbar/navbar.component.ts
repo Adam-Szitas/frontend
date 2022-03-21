@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { DropButtons } from '../../ui-types';
+import { DropButtons } from '../../ui-components/ui-types';
 
 @Component({
   selector: 'app-navbar',
@@ -16,19 +16,19 @@ export class NavbarComponent implements OnInit {
   public dropProfileButtons: DropButtons[] = [
     {
       button: {
-        text: this.translate.instant("NAVBAR.MY_COMPANY"),
+        text: 'NAVBAR.PROFILE.MY_COMPANY',
         type: 'NAVBUTTON',
         trigger: this.String
       },
     },{
       button: {
-        text: 'Profile',
+        text: 'NAVBAR.PROFILE.PROFILE',
         type: 'NAVBUTTON',
         trigger: this.String
       },
     },{
       button: {
-        text: 'Advanced',
+        text: 'NAVBAR.PROFILE.ADVANCED',
         type: 'NAVBUTTON',
         trigger: this.String
       }
@@ -38,28 +38,28 @@ export class NavbarComponent implements OnInit {
   public dropWorkButtons: DropButtons[] = [
     {
       button: {
-        text: 'My Works',
+        text: 'NAVBAR.WORK.MY_WORKS',
         type: 'NAVBUTTON',
         trigger: this.String
       }
     },
     {
       button: {
-        text: 'Diary',
+        text: 'NAVBAR.WORK.DIARY',
         type: 'NAVBUTTON',
         trigger: this.String
       }
     },
     {
       button: {
-        text: 'Protocols',
+        text: 'NAVBAR.WORK.PROTOCOLS',
         type: 'NAVBUTTON',
         trigger: this.String
       }
     },
     {
       button: {
-        text: 'To Do',
+        text: 'NAVBAR.WORK.TO_DO',
         type: 'NAVBUTTON',
         trigger: this.String
       }
@@ -71,6 +71,7 @@ export class NavbarComponent implements OnInit {
   ) {
     translate.addLangs(['en']);
     translate.defaultLang = 'en';
+    translate.use('en');
   }
 
   ngOnInit(): void {

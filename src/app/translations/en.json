@@ -1,0 +1,35 @@
+{
+    "NAVBAR": {
+        "PROFILE": {
+            "PROFILE": "Profile",
+            "MY_COMPANY": "My Company",
+            "ADVANCED": "Advanced"
+        },
+        "WORK": {
+            "MY_WORKS": "My Works",
+            "DIARY": "Diary",
+            "PROTOCOLS": "Protocols",
+            "TO_DO": "To Do"
+        },
+        "OFFERS": {
+            "OFFERS": "Offers",
+            "NEW_OFFER": "New Offer"
+        },
+        "CUSTOMERS": {
+            "CUSTOMERS": "Customers",
+            "ADD_CUSTOMER": "Add Customer"
+        },
+        "OBJECTS": {
+            "OBJECTS": "Objects",
+            "ADD_OBJECT": "Add Object"
+        },
+        "DEVICES": {
+            "DEVICES": "Devices",
+            "ADD_DEVICE": "Add Device"
+        },
+        "CRM": {
+            "CRM": "CRM",
+            "ADD_PARTNER": "Add Partner"
+        }
+    }
+}

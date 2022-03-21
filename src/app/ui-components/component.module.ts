@@ -1,13 +1,31 @@
+import { HttpClient } from "@angular/common/http";
 import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
+import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { UiButtonComponent } from "./buttons/ui-button/ui-button.component";
-import { NavbarComponent } from './navbar/navbar/navbar.component';
 
+
+export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
-  declarations: [
-    UiButtonComponent,
-    NavbarComponent
+  imports: [
+    BrowserModule,
+    TranslateModule,
+    TranslateModule.forRoot({
+      defaultLanguage: 'en',
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
-  bootstrap: []
+  declarations: [
+    UiButtonComponent
+  ],
+  exports: [TranslateModule, UiButtonComponent]
 })
 export class ComponentModule {}
