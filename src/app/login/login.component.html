@@ -1,0 +1,13 @@
+<div class="loginContainer">
+    <app-ui-form class="login" [formGroup]="form.form.formGroup">
+        <div class="column">
+            <div class="row">
+                <label for="userName" class="formLabel"></label>
+                <input id="userName" type="text" name="userName" formControlName="userName" [placeholder]="'LOGIN.USER_NAME' | translate" />
+            </div>
+            <div class="row">
+                <app-ui-input [inputId]="'password'" [inputName]="'password'" [inputText]="''" [isDisabled]="false" [labelText]="'LOGIN.PASSWORD' | translate" [placeholder]="'LOGIN.PASSWORD' | translate"></app-ui-input>
+            </div>
+        </div>
+    </app-ui-form>
+</div>

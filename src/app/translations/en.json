@@ -31,5 +31,9 @@
             "CRM": "CRM",
             "ADD_PARTNER": "Add Partner"
         }
+    },
+    "LOGIN": {
+        "USER_NAME": "Username",
+        "PASSWORD": "Password"
     }
 }

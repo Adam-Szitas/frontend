@@ -32,7 +32,7 @@ export class UiButtonComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log(this.dropButtons);
+
   }
 
   public CallEndpoint(endpoint: string, target?: TargetPageType): void{

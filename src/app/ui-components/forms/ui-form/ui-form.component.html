@@ -1,0 +1,11 @@
+<form class="form" [formGroup]="formGroup.form.formGroup">
+    <div class="left" *ngIf="formGroup.direction === 'LEFT'">
+        <app-ui-input *ngFor="let item of formGroup.form.formGroup"></app-ui-input>
+    </div>
+    <div class="left" *ngIf="formGroup.direction === 'RIGHT'">
+        <app-ui-input *ngFor="let item of formGroup.form.formGroup"></app-ui-input>
+    </div>
+    <div class="left" *ngIf="formGroup.direction === 'CENTER'">
+        <app-ui-input *ngFor="let item of formGroup.form.formGroup"></app-ui-input>
+    </div>
+</form>

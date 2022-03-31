@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+};
+
+export const testApi = {
+  rootApi: 'localhost:8000/web/',
+};
+
+export const apiEnvironment = {
+  rootApi: 'https:myespm.eu/',
 };
 
 /*
