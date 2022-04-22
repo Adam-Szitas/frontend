@@ -1,11 +1,7 @@
 <div class="input-container">
     <label for="{{ inputId }}">{{ labelText }}</label>
-    <input formControlName="input" type="text" name="{{ inputName }}" id="{{ inputId }}" class="input" [disabled]="isDisabled" [placeholder]="placeholder" [innerText]="inputText" />
-    <div *ngIf="
-      CustomValidationMessages &&
-      input?.invalid &&
-      (input?.dirty || input?.touched)
-    " class="alert">
+    <input formControlName="input" type="text" [name]="inputName" [id]="inputId" class="input" [disabled]="isDisabled" [placeholder]="placeholder" [innerText]="inputText" />
+    <div *ngIf="CustomValidationMessages && input?.invalid && (input?.dirty || input?.touched)" class="alert">
         <div *ngIf="input?.errors?.['required']">
             {{ CustomValidationMessages.required }}
         </div>
