@@ -8,9 +8,9 @@ import { FormInput } from 'src/app/login.interfaces';
 })
 export class UiFormComponent implements OnInit {
     @Input()
-    formGroup!: FormInput;
+    formInput!: FormInput;
 
     ngOnInit(): void {
-        console.log(this.formGroup);
+        console.log(this.formInput);
     }
 }

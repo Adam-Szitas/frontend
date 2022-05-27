@@ -4,28 +4,32 @@ import { TranslateService } from '@ngx-translate/core';
 import { FormInput } from '../login.interfaces';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  constructor(private translateService: TranslateService) {}
+    loginForm: FormInput = {
+        position: 'CENTER',
+        direction: 'COLUMN',
+        formGroupName: 'loginForm',
+        form: {
+            formControlInputs: [
+                {
+                    id: 'userName',
+                    controlName: 'userName',
+                    label: 'LOGIN.USER_NAME',
+                    validatorFn: [Validators.required, Validators.min(6)],
+                },
+                {
+                    id: 'password',
+                    controlName: 'password',
+                    label: 'LOGIN.PASSWORD',
+                    validatorFn: [Validators.required, Validators.min(6)],
+                },
+            ],
+        },
+    };
 
-  form: FormInput = {
-    direction: 'CENTER',
-    form: {
-      formGroup: new FormGroup({
-        userName: new FormControl(
-          this.translateService.instant('LOGIN.USER_NAME'),
-          [Validators.required, Validators.min(6)]
-        ),
-        password: new FormControl(
-          this.translateService.instant('LOGIN.PASSWORD'),
-          [Validators.required, Validators.min(6)]
-        ),
-      }),
-    },
-  };
-
-  ngOnInit(): void {}
+    ngOnInit(): void {}
 }

@@ -3,19 +3,21 @@ import { Observable } from 'rxjs';
 import { LoginService } from '../login/login.service';
 
 @Injectable({
-  providedIn: 'root',
+    providedIn: 'root',
 })
-export class UserService {
-  constructor(private loginService: LoginService) {}
+export class UserFacadeService {
+    constructor(private loginService: LoginService) {}
 
-  private userToken = localStorage.getItem('EspmUser');
+    private userToken = localStorage.getItem('EspmUser');
 
-  public get userData() {
-    return {
-      login: {
-        isLoggedin: (): boolean =>
-          this.loginService.isValidUserToken(this.userToken),
-      },
-    };
-  }
+    public get userData() {
+        return {
+            login: {
+                isLoggedin: ((): boolean => {
+                    console.log('userService: ', this.loginService.isValidUserToken(this.userToken));
+                    return this.loginService.isValidUserToken(this.userToken);
+                })(),
+            },
+        };
+    }
 }

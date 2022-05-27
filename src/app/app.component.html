@@ -1,2 +1,6 @@
-<app-skeleton-root *ngIf="isLoggedIn"></app-skeleton-root>
-<app-login *ngIf="!isLoggedIn"></app-login>
+<ng-container *ngIf="isLoggedIn">
+    <app-skeleton-root></app-skeleton-root>
+</ng-container>
+<ng-container *ngIf="!isLoggedIn">
+    <app-login></app-login>
+</ng-container>

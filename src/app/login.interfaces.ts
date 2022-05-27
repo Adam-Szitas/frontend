@@ -1,20 +1,33 @@
-import { OrientationCustomType } from './ui-components/ui-types';
+import { ValidatorFn } from '@angular/forms';
+import { DirectionType, OrientationCustomType } from './ui-components/ui-types';
 
 export interface LoginCredentials {
-  userName: string;
-  password: string;
+    userName: string;
+    password: string;
 }
 export interface ValidationMessages {
-  minLength?: string;
-  maxLength?: string;
-  required?: string;
+    minLength?: string;
+    maxLength?: string;
+    required?: string;
 }
 
 export interface FormInput {
-  direction: OrientationCustomType;
-  form: FormInputGroup;
+    formGroupName: string;
+    position: OrientationCustomType;
+    direction: DirectionType;
+    form: FormInputGroup;
 }
 
 interface FormInputGroup {
-  formGroup: any;
+    formControlInputs: FormControlInput[];
+}
+
+interface FormControlInput {
+    id: string;
+    dataCy?: string;
+    placeholder?: string;
+    value?: string | number | Date;
+    controlName: string;
+    validatorFn: ValidatorFn[];
+    label?: string;
 }

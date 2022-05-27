@@ -1,0 +1,34 @@
+{
+    "npmScope": "espm-frontend",
+    "affected": {
+        "defaultBase": "master"
+    },
+    "implicitDependencies": {
+        "package.json": {
+            "dependencies": "*",
+            "devDependencies": "*"
+        }
+    },
+    "tasksRunnerOptions": {
+        "default": {
+            "runner": "TODO",
+            "options": {
+                "cacheableOperations": ["build"]
+            }
+        }
+    },
+    "targetDependencies": {
+        "build": [{
+            "target": "build",
+            "projects": "dependencies"
+        }]
+    },
+    "projects": {
+        "authentication": {
+            "tags": ["authentication"]
+        },
+        "works": {
+            "tags": ["works"]
+        }
+    }
+}

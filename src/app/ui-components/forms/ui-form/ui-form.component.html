@@ -1,11 +1,15 @@
-<form class="form" [formGroup]="formGroup.form.formGroup">
-    <div class="left" *ngIf="formGroup.direction === 'LEFT'">
-        <app-ui-input *ngFor="let item of formGroup.form.formGroup"></app-ui-input>
-    </div>
-    <div class="left" *ngIf="formGroup.direction === 'RIGHT'">
-        <app-ui-input *ngFor="let item of formGroup.form.formGroup"></app-ui-input>
-    </div>
-    <div class="left" *ngIf="formGroup.direction === 'CENTER'">
-        <app-ui-input *ngFor="let item of formGroup.form.formGroup"></app-ui-input>
+<form class="form">
+    <div
+        [class]="formInput.position.toLowerCase()"
+        [ngClass]="{ 'display-column': formInput.direction === 'COLUMN', 'display-row': formInput.direction === 'ROW' }"
+    >
+        <app-ui-input
+            *ngFor="let item of formInput.form.formControlInputs"
+            [inputId]="item.id"
+            [labelText]="item.label ?? ''"
+            [inputName]="item.controlName"
+            [CustomValidator]="item.validatorFn"
+            [spacing]="2"
+        ></app-ui-input>
     </div>
 </form>

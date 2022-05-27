@@ -5,12 +5,13 @@
     "bracketSpacing": true,
     "printWidth": 140,
     "endOfLine": "auto",
-    "overrides": [{
-        "files": "*.html",
-        "options": {
-            "printWidth": 100,
-            "parser": "angular",
-            "htmlWhitespaceSensitivity": "css"
+    "overrides": [
+        {
+            "files": "*.html",
+            "options": {
+                "parser": "angular",
+                "htmlWhitespaceSensitivity": "css"
+            }
         }
-    }]
+    ]
 }
