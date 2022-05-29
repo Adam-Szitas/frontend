@@ -13,8 +13,8 @@ export class UserFacadeService {
     public get userData() {
         return {
             login: {
-                isLoggedin: ((): boolean => {
-                    return this.loginService.isValidUserToken(this.userToken);
+                isLoggedin: ((): Observable<boolean> => {
+                    return this.loginService.isValidUserToken$(this.userToken);
                 })(),
             },
         };

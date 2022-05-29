@@ -33,6 +33,6 @@ export class HttpService {
             }),
         };
 
-        return this.httpClient.post<Object>(this.LoginApi, credentials, httpOptions);
+        return this.httpClient.post<Object>(this.LoginApi, credentials, httpOptions); //TODO create response Type-Guards
     }
 }

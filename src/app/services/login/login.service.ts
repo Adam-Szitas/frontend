@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { HttpService } from '../http/http.service';
 
 @Injectable({
@@ -7,8 +8,8 @@ import { HttpService } from '../http/http.service';
 export class LoginService {
     constructor(private httpService: HttpService) {}
 
-    isValidUserToken(userToken: string | null): boolean {
+    isValidUserToken$(userToken: string | null): Observable<boolean> {
         const response = this.httpService.isValidUserToken(userToken);
-        return !!response;
+        return of(!!response);
     }
 }
