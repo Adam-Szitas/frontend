@@ -25,7 +25,7 @@ interface FormInputGroup {
 interface FormControlInput {
     id: string;
     dataCy?: string;
-    placeholder?: string;
+    placeHolder?: string;
     value?: string | number | Date;
     controlName: string;
     validatorFn: ValidatorFn[];

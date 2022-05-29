@@ -1,1 +1,12 @@
 @import '../../espm.spacing.scss';
+
+label{
+  position: absolute;
+  margin-top: -16px;
+}
+
+input{
+  position: relative;
+  padding: 8px 16px;
+}
+

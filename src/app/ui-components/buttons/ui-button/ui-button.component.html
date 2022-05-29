@@ -1,10 +1,12 @@
 <div [ngClass]="orientation === 'LEFT' ? 'buttonBox left' : 'buttonBox right'">
-    <button type="{{ buttonType }}" [class]="'btn ' + classList">
-      {{ text }}
+    <button type="{{ buttonType }}" [class]="'btn ' + classList + 'background-color-' + getBgColor(buttonType)">
+        {{ text }}
     </button>
-    <div class="dropdown">
-        <button *ngFor="let dropButton of dropButtons" class="dropButton btn bg-grey color-white hover-green">
-          {{ dropButton.button.text | translate }}
-        </button>
-    </div>
+    <ng-container *ngIf="dropButtons">
+        <div class="dropdown">
+            <button *ngFor="let dropButton of dropButtons" class="dropButton btn bg-grey color-white hover-green">
+                {{ dropButton.button.text | translate }}
+            </button>
+        </div>
+    </ng-container>
 </div>

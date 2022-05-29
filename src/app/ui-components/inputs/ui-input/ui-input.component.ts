@@ -19,7 +19,7 @@ export class UiInputComponent implements OnInit {
     @Input()
     inputName!: string;
     @Input()
-    placeholder?: string | null;
+    placeHolder: string = '';
     @Input()
     CustomValidator!: Array<ValidatorFn>;
     @Input()
@@ -33,5 +33,7 @@ export class UiInputComponent implements OnInit {
 
     constructor() {}
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+        console.log(this.placeHolder);
+    }
 }

@@ -8,7 +8,7 @@ import { FormInput } from '../login.interfaces';
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
     loginForm: FormInput = {
         position: 'CENTER',
         direction: 'COLUMN',
@@ -20,16 +20,20 @@ export class LoginComponent implements OnInit {
                     controlName: 'userName',
                     label: 'LOGIN.USER_NAME',
                     validatorFn: [Validators.required, Validators.min(6)],
+                    placeHolder: 'LOGIN.USER_NAME',
                 },
                 {
                     id: 'password',
                     controlName: 'password',
                     label: 'LOGIN.PASSWORD',
                     validatorFn: [Validators.required, Validators.min(6)],
+                    placeHolder: 'LOGIN.PASSWORD',
                 },
             ],
         },
     };
 
-    ngOnInit(): void {}
+    public onSubmitForm($event: any) {
+        console.log($event);
+    }
 }

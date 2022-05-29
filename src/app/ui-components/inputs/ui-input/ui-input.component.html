@@ -6,10 +6,10 @@
         [id]="inputId"
         class="input"
         [disabled]="isDisabled"
-        [placeholder]="placeholder ?? ''"
+        [placeholder]="placeHolder | translate"
         [innerText]="inputText"
     />
-    <div *ngIf="CustomValidationMessages && input?.invalid && (input?.dirty || input?.touched)" class="alert">
+    <div *ngIf="CustomValidationMessages && input?.invalid && (input?.dirty || input?.touched) && CustomValidationMessages" class="alert">
         <div *ngIf="input?.errors?.['required']">
             {{ CustomValidationMessages.required }}
         </div>

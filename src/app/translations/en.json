@@ -33,7 +33,8 @@
         }
     },
     "LOGIN": {
-        "USER_NAME": "Username",
-        "PASSWORD": "Password"
+        "USER_NAME": "User name",
+        "PASSWORD": "Password",
+        "SUBMIT": "Submit"
     }
 }

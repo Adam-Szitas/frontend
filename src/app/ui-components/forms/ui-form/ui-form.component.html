@@ -1,4 +1,4 @@
-<form class="form">
+<form class="form" (onSubmit)="onSubmitForm($event)">
     <div
         [class]="formInput.position.toLowerCase()"
         [ngClass]="{ 'display-column': formInput.direction === 'COLUMN', 'display-row': formInput.direction === 'ROW' }"
@@ -10,6 +10,10 @@
             [inputName]="item.controlName"
             [CustomValidator]="item.validatorFn"
             [spacing]="2"
+            [placeHolder]="item.placeHolder ?? ''"
         ></app-ui-input>
+    </div>
+    <div class="button-container justify-end">
+        <app-ui-button [buttonType]="'SUBMIT'" [disabled]="!isFormValid" [orientation]="'RIGHT'" [text]="'LOGIN.SUBMIT'"></app-ui-button>
     </div>
 </form>

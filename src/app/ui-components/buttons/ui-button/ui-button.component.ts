@@ -3,49 +3,52 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ButtonTypes, DropButtons, OrientationCustomType, TargetPageType } from '../../ui-types';
 
 @Component({
-  selector: 'app-ui-button',
-  templateUrl: './ui-button.component.html',
-  styleUrls: ['./ui-button.component.scss']
+    selector: 'app-ui-button',
+    templateUrl: './ui-button.component.html',
+    styleUrls: ['./ui-button.component.scss'],
 })
 export class UiButtonComponent implements OnInit {
-  @Input()
-  classList: string = '';
+    @Input()
+    classList: string = '';
 
-  @Input()
-  buttonType: ButtonTypes = 'NEXT';
+    @Input()
+    buttonType: ButtonTypes = 'NEXT';
 
-  @Input()
-  text: string = '';
+    @Input()
+    text: string = '';
 
-  @Input()
-  dropButtons?: DropButtons[];
+    @Input()
+    dropButtons?: DropButtons[];
 
-  @Input()
-  disabled: boolean = false;
+    @Input()
+    disabled: boolean = false;
 
-  @Input()
-  orientation: OrientationCustomType = 'LEFT';
+    @Input()
+    orientation: OrientationCustomType = 'LEFT';
 
+    constructor(private httpService: HttpClient) {}
 
-  constructor(
-    private httpService: HttpClient
-  ) { }
+    ngOnInit(): void {}
 
-  ngOnInit(): void {
+    public CallEndpoint(endpoint: string, target?: TargetPageType): void {
+        const header = {};
+        const body = {};
+        this.httpService.post(endpoint, body, { headers: header }).subscribe(
+            (callBack) => {
+                console.log(callBack);
+            },
+            (error: Error) => {
+                console.log(error);
+            }
+        );
+    }
 
-  }
-
-  public CallEndpoint(endpoint: string, target?: TargetPageType): void{
-    const header = {};
-    const body = {};
-    this.httpService.post(endpoint,body,{headers: header}).subscribe(
-      (callBack) => {
-        console.log(callBack);
-      },
-      (error: Error) => {
-        console.log(error);
-
-      }
-      )
-  }
+    public getBgColor(color: ButtonTypes) {
+        switch (color) {
+            case 'SUBMIT':
+                return 'espm-blue';
+            default:
+                return 'espm-blue';
+        }
+    }
 }
