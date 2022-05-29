@@ -13,8 +13,8 @@ export class HttpService {
 
     constructor(private httpClient: HttpClient) {}
 
-    isValidUserToken$(userToken: string | null): boolean {
-        if (userToken === null) return false;
+    isValidUserToken(userToken: string | null): boolean {
+        if (userToken === null) return true;
         else {
             //TODO to be updated to solve JWT
             const header = new HttpHeaders().set('content-type', 'text/json').set('Cache-control', 'no-cache');

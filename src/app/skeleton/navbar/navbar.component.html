@@ -1,11 +1,59 @@
 <div class="navbar">
-    <app-ui-button [classList]="'bg-espm color-white hover-green'" [buttonType]="'NAVBUTTON'" [text]="'NAVBAR.PROFILE.PROFILE' | translate" [dropButtons]="dropProfileButtons"></app-ui-button>
-    <app-ui-button [classList]="'bg-espm color-white hover-green'" [buttonType]="'NAVBUTTON'" [text]="'NAVBAR.WORK.MY_WORKS' | translate" [dropButtons]="dropWorkButtons"></app-ui-button>
-    <app-ui-button [classList]="'bg-espm color-white hover-green'" [buttonType]="'NAVBUTTON'" [text]="'NAVBAR.OFFERS.OFFERS' | translate" [dropButtons]="dropProfileButtons"></app-ui-button>
-    <app-ui-button [classList]="'bg-espm color-white hover-green'" [buttonType]="'NAVBUTTON'" [text]="'NAVBAR.CUSTOMERS.CUSTOMERS' | translate" [dropButtons]="dropProfileButtons"></app-ui-button>
-    <app-ui-button [classList]="'bg-espm color-white hover-green'" [buttonType]="'NAVBUTTON'" [text]="'NAVBAR.OBJECTS.OBJECTS' | translate" [dropButtons]="dropProfileButtons"></app-ui-button>
-    <app-ui-button [classList]="'bg-espm color-white hover-green'" [buttonType]="'NAVBUTTON'" [text]="'NAVBAR.DEVICES.DEVICES' | translate" [dropButtons]="dropProfileButtons"></app-ui-button>
-    <app-ui-button [classList]="'bg-espm color-white hover-green'" [buttonType]="'NAVBUTTON'" [text]="'NAVBAR.CRM.CRM' | translate" [dropButtons]="dropProfileButtons"></app-ui-button>
+    <app-ui-button
+        routerLink="profile"
+        [classList]="'bg-espm color-white hover-green'"
+        [buttonType]="'NAVBUTTON'"
+        [text]="'NAVBAR.PROFILE.PROFILE' | translate"
+        [dropButtons]="dropProfileButtons"
+    ></app-ui-button>
+    <app-ui-button
+        routerLink="works"
+        [classList]="'bg-espm color-white hover-green'"
+        [buttonType]="'NAVBUTTON'"
+        [text]="'NAVBAR.WORK.MY_WORKS' | translate"
+        [dropButtons]="dropWorkButtons"
+    ></app-ui-button>
+    <app-ui-button
+        routerLink="offers"
+        [classList]="'bg-espm color-white hover-green'"
+        [buttonType]="'NAVBUTTON'"
+        [text]="'NAVBAR.OFFERS.OFFERS' | translate"
+        [dropButtons]="dropProfileButtons"
+    ></app-ui-button>
+    <app-ui-button
+        routerLink="customers"
+        [classList]="'bg-espm color-white hover-green'"
+        [buttonType]="'NAVBUTTON'"
+        [text]="'NAVBAR.CUSTOMERS.CUSTOMERS' | translate"
+        [dropButtons]="dropProfileButtons"
+    ></app-ui-button>
+    <app-ui-button
+        routerLink="objects"
+        [classList]="'bg-espm color-white hover-green'"
+        [buttonType]="'NAVBUTTON'"
+        [text]="'NAVBAR.OBJECTS.OBJECTS' | translate"
+        [dropButtons]="dropProfileButtons"
+    ></app-ui-button>
+    <app-ui-button
+        routerLink="devices"
+        [classList]="'bg-espm color-white hover-green'"
+        [buttonType]="'NAVBUTTON'"
+        [text]="'NAVBAR.DEVICES.DEVICES' | translate"
+        [dropButtons]="dropProfileButtons"
+    ></app-ui-button>
+    <app-ui-button
+        routerLink="crm"
+        [classList]="'bg-espm color-white hover-green'"
+        [buttonType]="'NAVBUTTON'"
+        [text]="'NAVBAR.CRM.CRM' | translate"
+        [dropButtons]="dropProfileButtons"
+    ></app-ui-button>
 
-    <app-ui-button [classList]="'bg-espm color-white hover-green right'" [orientation]="'RIGHT'" [buttonType]="'NAVBUTTON'" [text]="'Log Out'"></app-ui-button>
+    <app-ui-button
+        routerLink="logout"
+        [classList]="'bg-espm color-white hover-green right'"
+        [orientation]="'RIGHT'"
+        [buttonType]="'NAVBUTTON'"
+        [text]="'Log Out'"
+    ></app-ui-button>
 </div>

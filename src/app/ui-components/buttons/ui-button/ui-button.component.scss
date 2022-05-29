@@ -53,4 +53,11 @@ div.buttonBox {
 .background-color-espm-blue {
     color: white;
     background-color: $espmBlue !important;
+    &:hover {
+        background-color: $lightBlue !important;
+    }
+}
+
+.padding-submit {
+    padding: 8px 16px !important;
 }

@@ -1,5 +1,5 @@
 <div [ngClass]="orientation === 'LEFT' ? 'buttonBox left' : 'buttonBox right'">
-    <button type="{{ buttonType }}" [class]="'btn ' + classList + 'background-color-' + getBgColor(buttonType)">
+    <button type="{{ buttonType }}" [class]="'btn ' + classList + 'background-color-' + getBgColor(buttonType) + ' padding-submit'">
         {{ text }}
     </button>
     <ng-container *ngIf="dropButtons">

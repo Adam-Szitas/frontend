@@ -12,7 +12,7 @@ export class UiFormComponent {
     formInput!: FormInput;
 
     @Output()
-    onSubmit: EventEmitter<Event> = new EventEmitter();
+    onSubmit: EventEmitter<Event> = new EventEmitter<Event>();
 
     public isFormValid: boolean = false;
 

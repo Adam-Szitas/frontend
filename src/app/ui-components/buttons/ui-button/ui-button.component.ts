@@ -7,7 +7,7 @@ import { ButtonTypes, DropButtons, OrientationCustomType, TargetPageType } from 
     templateUrl: './ui-button.component.html',
     styleUrls: ['./ui-button.component.scss'],
 })
-export class UiButtonComponent implements OnInit {
+export class UiButtonComponent {
     @Input()
     classList: string = '';
 
@@ -18,7 +18,7 @@ export class UiButtonComponent implements OnInit {
     text: string = '';
 
     @Input()
-    dropButtons?: DropButtons[];
+    dropButtons: DropButtons[] = [];
 
     @Input()
     disabled: boolean = false;
@@ -28,10 +28,8 @@ export class UiButtonComponent implements OnInit {
 
     constructor(private httpService: HttpClient) {}
 
-    ngOnInit(): void {}
-
     public CallEndpoint(endpoint: string, target?: TargetPageType): void {
-        const header = {};
+        const header = {}; //TODO extend header and body
         const body = {};
         this.httpService.post(endpoint, body, { headers: header }).subscribe(
             (callBack) => {

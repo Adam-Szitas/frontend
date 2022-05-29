@@ -30,4 +30,7 @@ interface FormControlInput {
     controlName: string;
     validatorFn: ValidatorFn[];
     label?: string;
+    type?: InputTypes;
 }
+
+export type InputTypes = 'text' | 'password' | 'date'; //TODO extend

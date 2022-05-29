@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { UserFacadeService } from './services/facade/user.service';
 
 @Component({
@@ -6,12 +6,8 @@ import { UserFacadeService } from './services/facade/user.service';
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
     constructor(private userFacadeService: UserFacadeService) {}
 
     isLoggedIn: boolean = this.userFacadeService.userData.login.isLoggedin ?? false;
-
-    ngOnInit(): void {
-        // console.log(this.isLoggedIn);
-    }
 }

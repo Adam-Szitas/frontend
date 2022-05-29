@@ -8,10 +8,7 @@ export class LoginService {
     constructor(private httpService: HttpService) {}
 
     isValidUserToken(userToken: string | null): boolean {
-        const response = this.httpService.isValidUserToken$(userToken);
-
-        console.log('response:', response);
-
-        return !!this.httpService.isValidUserToken$(userToken);
+        const response = this.httpService.isValidUserToken(userToken);
+        return !!response;
     }
 }

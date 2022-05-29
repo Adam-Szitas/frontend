@@ -1,13 +1,13 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, ValidatorFn } from '@angular/forms';
-import { ValidationMessages } from 'src/app/login.interfaces';
+import { InputTypes, ValidationMessages } from 'src/app/login.interfaces';
 
 @Component({
     selector: 'app-ui-input',
     templateUrl: './ui-input.component.html',
     styleUrls: ['./ui-input.component.scss'],
 })
-export class UiInputComponent implements OnInit {
+export class UiInputComponent {
     @Input()
     inputId!: string;
     @Input()
@@ -25,15 +25,9 @@ export class UiInputComponent implements OnInit {
     @Input()
     CustomValidationMessages?: ValidationMessages;
     @Input()
-    inputType: 'text' | 'radio' | 'number' = 'text';
+    inputType: InputTypes = 'text';
     @Input()
     spacing: number = 1;
 
     input = new FormControl(this.inputText, this.CustomValidator);
-
-    constructor() {}
-
-    ngOnInit(): void {
-        console.log(this.placeHolder);
-    }
 }

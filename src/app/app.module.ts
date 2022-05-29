@@ -5,14 +5,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { SkeletonComponent } from './skeleton/skeleton.component';
 import { SkeletonModule } from './skeleton/skeleton.module';
 import { ComponentModule } from './ui-components/component.module';
 import { UiFormComponent } from './ui-components/forms/ui-form/ui-form.component';
 import { UiInputComponent } from './ui-components/inputs/ui-input/ui-input.component';
+import { PageNotFoundComponent } from './void/page-not-found/page-not-found.component';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     return new TranslateHttpLoader(http, './app/translations/', '.json');
@@ -20,10 +19,9 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 
 //TODO Add NgRx Store
 @NgModule({
-    declarations: [AppComponent, LoginComponent, UiInputComponent, UiFormComponent],
+    declarations: [AppComponent, LoginComponent, UiInputComponent, UiFormComponent, PageNotFoundComponent],
     imports: [
         BrowserModule,
-        AppRoutingModule,
         ComponentModule,
         HttpClientModule,
         SkeletonModule,
