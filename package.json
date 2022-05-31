@@ -26,6 +26,7 @@
         "@ngx-translate/core": "^14.0.0",
         "@ngx-translate/http-loader": "^7.0.0",
         "eslint-config-prettier": "^6.10.1",
+        "io-ts": "^2.2.16",
         "nest": "^0.1.6",
         "nestjs": "^0.0.1",
         "next": "^12.1.6",
