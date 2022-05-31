@@ -3,7 +3,7 @@ import { StoreModule } from '@ngrx/store';
 import { TranslateService } from '@ngx-translate/core';
 import { ComponentModule } from 'src/app/ui-components/component.module';
 import { AppRoutingModule } from '../app-routing.module';
-import { FEATUER_NAME_HTTP, httpReducer } from '../reducers/http-reducer/http.reducer';
+import { FEATUER_NAME_HTTP, httpReducer } from '../legs/reducers/http-reducer/http.reducer';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SkeletonComponent } from './skeleton.component';
 
