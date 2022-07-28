@@ -14,8 +14,8 @@ export class UserFacadeService {
     public get userData() {
         return {
             userCredentials: {
-                userCredentials$: (): Observable<UserState> => this.store$.select(UserCredentialsSelectors.getUserCredentials),
-                userId$: (): Observable<number | null> => this.store$.select(UserCredentialsSelectors.getUserId),
+                userCredentials$: ((): Observable<UserState> => this.store$.select(UserCredentialsSelectors.getUserCredentials))(),
+                userId$: ((): Observable<number | null> => this.store$.select(UserCredentialsSelectors.getUserId))(),
                 setUserCredentials: (userCredentials: UserState) => this.store$.dispatch(LoginActions.setCredentials({ userCredentials })),
             },
         };

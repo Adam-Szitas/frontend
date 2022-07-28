@@ -2,6 +2,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveComponentModule } from '@ngrx/component';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppRoutingModule } from './app-routing.module';
@@ -27,6 +28,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         HttpClientModule,
         SkeletonModule,
         ReactiveFormsModule,
+        ReactiveComponentModule,
         AppRoutingModule,
         FormsModule,
         TranslateModule.forRoot({
