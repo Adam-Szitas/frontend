@@ -1,25 +1,7 @@
-<form class="form" (submit)="onSubmitForm($event)">
+<form class="form" [formGroup]="formGroup" (submit)="onSubmitForm()">
     <div
+        *ngIf="formInput"
         [class]="formInput.position.toLowerCase()"
         [ngClass]="{ 'display-column': formInput.direction === 'COLUMN', 'display-row': formInput.direction === 'ROW' }"
-    >
-        <app-ui-input
-            *ngFor="let item of formInput.form.formControlInputs"
-            [inputId]="item.id"
-            [labelText]="item.label ?? ''"
-            [inputName]="item.controlName"
-            [CustomValidator]="item.validatorFn"
-            [spacing]="2"
-            [placeHolder]="item.placeHolder ?? ''"
-            [inputType]="item.type ?? 'text'"
-        ></app-ui-input>
-    </div>
-    <div class="button-container justify-end">
-        <app-ui-button
-            [buttonType]="'SUBMIT'"
-            [disabled]="!isFormValid"
-            [orientation]="'RIGHT'"
-            [text]="'LOGIN.SUBMIT' | translate"
-        ></app-ui-button>
-    </div>
+    ></div>
 </form>

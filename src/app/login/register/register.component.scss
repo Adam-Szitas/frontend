@@ -1,7 +1,4 @@
-@import '../ui-components/espm.colors.scss';
-@import '../ui-components//espm.fonts.scss';
-
-.login-container {
+.register-container {
     margin: 0 auto;
     width: 100%;
     height: 100vh;
@@ -19,8 +16,12 @@ h1 {
     font-weight: bold;
 }
 
-.column {
-    display: block;
+.register-width {
+    width: 450px;
+}
+
+.d-flex {
+    display: flex;
 }
 
 .justify-end {
@@ -29,20 +30,4 @@ h1 {
 
 .justify-space-between {
     justify-content: space-between;
-}
-
-.d-flex {
-    display: flex;
-}
-
-div.image-box {
-    margin-top: 20px;
-}
-
-.login-width {
-    width: 450px;
-}
-
-.font-2 {
-    font-size: $font-2;
 }

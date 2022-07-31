@@ -28,6 +28,10 @@ export class AuthService {
             (error) => {}
         );
     }
+
+    public getAccessToken() {
+        return this.userFacade.userData.userCredentials.userCredentials$.pipe(take(1)).subscribe((_) => _);
+    }
 }
 
 export interface LoginForm {

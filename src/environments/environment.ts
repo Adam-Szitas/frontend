@@ -4,10 +4,11 @@
 
 export const environment = {
     production: false,
+    authenticate: true,
 };
 
 export const testApi = {
-    rootApi: 'localhost:8000/web/',
+    rootApi: 'http://localhost:8000/api',
 };
 
 export const apiEnvironment = {

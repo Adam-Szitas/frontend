@@ -1,9 +1,10 @@
 import { ValidatorFn } from '@angular/forms';
+import { UserState } from './legs/reducers/user-credentials/user.reducer';
 import { DirectionType, OrientationCustomType } from './ui-components/ui-types';
 
 export interface LoginCredentials {
-    userName: string;
-    password: string;
+    userName: string | null;
+    password: string | null;
 }
 export interface ValidationMessages {
     minLength?: string;
@@ -15,22 +16,23 @@ export interface FormInput {
     formGroupName: string;
     position: OrientationCustomType;
     direction: DirectionType;
-    form: FormInputGroup;
 }
 
-interface FormInputGroup {
-    formControlInputs: FormControlInput[];
-}
-
-interface FormControlInput {
+export interface FormControlInput {
     id: string;
     dataCy?: string;
-    placeHolder?: string;
+    placeHolder: string | null;
     value?: string | number | Date;
     controlName: string;
     validatorFn: ValidatorFn[];
-    label?: string;
+    label: string;
     type?: InputTypes;
+    default?: string;
 }
 
 export type InputTypes = 'text' | 'password' | 'date'; //TODO extend
+
+export interface LoginResponse extends UserState {
+    success: boolean;
+    jwt_token: string;
+}

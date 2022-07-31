@@ -25,14 +25,8 @@
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
                         "tsConfig": "tsconfig.app.json",
-                        "assets": [
-                            "src/favicon.ico",
-                            "src/assets",
-                            "src/app/translations"
-                        ],
-                        "styles": [
-                            "src/styles.scss"
-                        ],
+                        "assets": ["src/favicon.ico", "src/assets", "src/app/translations"],
+                        "styles": ["src/styles.scss"],
                         "scripts": [],
                         "vendorChunk": true,
                         "extractLicenses": false,
@@ -43,10 +37,12 @@
                     },
                     "configurations": {
                         "production": {
-                            "fileReplacements": [{
-                                "replace": "src/environments/environment.ts",
-                                "with": "src/environments/environment.prod.ts"
-                            }],
+                            "fileReplacements": [
+                                {
+                                    "replace": "src/environments/environment.ts",
+                                    "with": "src/environments/environment.prod.ts"
+                                }
+                            ],
                             "optimization": true,
                             "outputHashing": "all",
                             "sourceMap": false,
@@ -54,7 +50,8 @@
                             "extractLicenses": true,
                             "vendorChunk": false,
                             "buildOptimizer": true,
-                            "budgets": [{
+                            "budgets": [
+                                {
                                     "type": "initial",
                                     "maximumWarning": "500kb",
                                     "maximumError": "1mb"
@@ -93,13 +90,8 @@
                         "polyfills": "src/polyfills.ts",
                         "tsConfig": "tsconfig.spec.json",
                         "karmaConfig": "karma.conf.js",
-                        "assets": [
-                            "src/favicon.ico",
-                            "src/assets"
-                        ],
-                        "styles": [
-                            "src/styles.scss"
-                        ],
+                        "assets": ["src/favicon.ico", "src/assets"],
+                        "styles": ["src/styles.scss"],
                         "scripts": []
                     }
                 },
@@ -117,6 +109,5 @@
                 }
             }
         }
-    },
-    "defaultProject": "frontend"
+    }
 }

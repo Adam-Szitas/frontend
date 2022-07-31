@@ -1,38 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './login/register/register.component';
+import { AuthService } from './services/auth/auth.service';
 import { RouteGuardService } from './services/route-guard/route-guard.service';
-import { SkeletonComponent } from './skeleton/skeleton.component';
-import { SearchComponent } from './skeleton/works/search/search.component';
-import { TabComponent } from './skeleton/works/tab/tab.component';
 import { PageNotFoundComponent } from './void/page-not-found/page-not-found.component';
 
-//TODO insert every page and subpage
-const routes: Routes = [
+const skeletonRoutes: Routes = [
     {
-        path: '/',
+        path: '',
         component: LoginComponent,
-        canActivate: [RouteGuardService],
     },
     {
         path: 'app',
         canActivate: [RouteGuardService],
-        component: SkeletonComponent,
-        children: [
-            {
-                path: 'work',
-                children: [
-                    {
-                        path: '',
-                        component: SearchComponent,
-                    },
-                    {
-                        path: 'tab',
-                        component: TabComponent,
-                    },
-                ],
-            },
-        ],
+        loadChildren: () => import('./skeleton/skeleton.module').then((_) => _.SkeletonModule),
+    },
+    {
+        path: 'register',
+        component: RegisterComponent,
     },
     {
         path: '**',
@@ -41,7 +27,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
+    imports: [RouterModule.forRoot(skeletonRoutes)],
     exports: [RouterModule],
+    providers: [RouteGuardService],
 })
 export class AppRoutingModule {}

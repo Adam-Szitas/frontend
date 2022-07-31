@@ -1,12 +1,26 @@
 @import '../../espm.spacing.scss';
 
-label{
-  position: absolute;
-  margin-top: -16px;
+* {
+    box-sizing: border-box;
 }
 
-input{
-  position: relative;
-  padding: 8px 16px;
+label {
+    position: absolute;
+    margin: 8px 16px;
+    z-index: 5;
+    transition: all 0.2s ease-in-out;
+    &.focused {
+        margin: -20px 4px;
+        font-size: 14px;
+        color: white;
+    }
 }
 
+input {
+    position: relative;
+    padding: 8px 16px;
+}
+div.input-container,
+div.input-container *:not(label) {
+    width: 100%;
+}

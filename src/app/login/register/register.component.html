@@ -1,10 +1,10 @@
-<div class="login-container">
-    <h1>{{ 'LOGIN.LOGIN_TITLE' | translate }}</h1>
-    <form [formGroup]="formGroup" class="login-width" (submit)="onSubmitForm()">
+<div class="register-container">
+    <h1>{{ 'COMPANY.REGISTER.HEADLINE' | translate }}</h1>
+    <form [formGroup]="registerForm" class="register-width" (submit)="onSubmitForm()">
         <div *ngIf="formControlInputs">
             <app-ui-input
                 *ngFor="let input of formControlInputs"
-                [parentForm]="formGroup"
+                [parentForm]="registerForm"
                 [formControlNameString]="input.controlName"
                 [labelText]="input.label"
                 [inputName]="input.controlName"
@@ -15,23 +15,20 @@
         </div>
         <div class="button-container d-flex justify-space-between">
             <app-ui-button
-                routerLink="register"
+                routerLink=""
                 [buttonType]="'BUTTON'"
                 [orientation]="'LEFT'"
-                [text]="'COMMON.REGISTER' | translate"
-                [classList]="'register-button btn-border-white font-2'"
+                [text]="'COMMON.LOGIN' | translate"
+                [classList]="'login-button btn-border-white font-2'"
             ></app-ui-button>
             <app-ui-button
                 [buttonType]="'SUBMIT'"
                 [disabled]="!isFormValid"
                 [orientation]="'RIGHT'"
-                [text]="'COMMON.SUBMIT' | translate"
+                [text]="'COMMON.REGISTER' | translate"
                 [icon]="'arrow_right_alt'"
                 [classList]="'login-button btn-border-white font-2'"
             ></app-ui-button>
         </div>
     </form>
-    <div class="image-box">
-        <img src="https://myespm.eu/espmFavicon.png" alt="espmFavicon" />
-    </div>
 </div>

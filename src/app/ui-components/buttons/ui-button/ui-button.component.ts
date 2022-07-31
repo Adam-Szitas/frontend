@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ButtonTypes, DropButtons, OrientationCustomType, TargetPageType } from '../../ui-types';
 
 @Component({
@@ -26,6 +26,9 @@ export class UiButtonComponent {
     @Input()
     orientation: OrientationCustomType = 'LEFT';
 
+    @Input()
+    icon?: string;
+
     constructor(private httpService: HttpClient) {}
 
     public CallEndpoint(endpoint: string, target?: TargetPageType): void {
@@ -44,7 +47,7 @@ export class UiButtonComponent {
     public getBgColor(color: ButtonTypes) {
         switch (color) {
             case 'SUBMIT':
-                return 'espm-blue';
+                return 'espm-green';
             default:
                 return 'espm-blue';
         }

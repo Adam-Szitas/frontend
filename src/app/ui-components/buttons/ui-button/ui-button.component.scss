@@ -1,4 +1,5 @@
 @import '../../espm.colors.scss';
+@import '../../espm.fonts.scss';
 div.buttonBox {
     &.left {
         display: inline-block;
@@ -7,6 +8,8 @@ div.buttonBox {
         display: inline;
     }
     & .btn {
+        display: flex;
+        align-items: center;
         border: 0;
         padding: 1rem;
         &:hover {
@@ -14,6 +17,9 @@ div.buttonBox {
         }
         &.right {
             float: right;
+        }
+        &[type='submit'] {
+            font-size: $font-2;
         }
     }
     & .dropdown {
@@ -43,21 +49,34 @@ div.buttonBox {
 }
 
 .color-white {
-    color: white;
+    color: $espmWhite;
 }
 
 .hover-green:hover {
-    background-color: $green;
+    background-color: $espmGreen;
 }
 
 .background-color-espm-blue {
-    color: white;
+    color: $espmWhite;
     background-color: $espmBlue !important;
     &:hover {
         background-color: $lightBlue !important;
     }
 }
 
+.background-color-espm-green {
+    color: $espmWhite;
+    background-color: $espmGreen !important;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+        background-color: $lightGreen !important;
+    }
+}
+
 .padding-submit {
     padding: 8px 16px !important;
+}
+
+.btn-border-white {
+    border: 1px solid $espmWhite !important;
 }

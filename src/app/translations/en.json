@@ -33,8 +33,28 @@
         }
     },
     "LOGIN": {
+        "LOGIN_TITLE": "Log in",
         "USER_NAME": "User name",
-        "PASSWORD": "Password",
-        "SUBMIT": "Submit"
+        "PASSWORD": "Password"
+    },
+    "COMPANY": {
+        "REGISTER": {
+            "HEADLINE": "Registration",
+            "COMPANY_NAME": "Company name",
+            "EMAIL": "E-mail",
+            "PHONE": "Phone",
+            "BUSINESS_ID": "Business ID",
+            "TAX_ID": "Tax ID",
+            "VAT": "VAT",
+            "ZIP_CODE": "Zip code",
+            "COUNTRY": "Country",
+            "CITY": "City",
+            "ADDRESS": "Address"
+        }
+    },
+    "COMMON": {
+        "SUBMIT": "Submit",
+        "REGISTER": "Register",
+        "LOGIN": "Login"
     }
 }

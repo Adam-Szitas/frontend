@@ -1,4 +1,4 @@
-export type ButtonTypes = 'SUBMIT' | 'ADD' | 'DELETE' | 'UPDATE' | 'NEXT' | 'NAVBUTTON' | 'ICON';
+export type ButtonTypes = 'BUTTON' | 'SUBMIT' | 'ADD' | 'DELETE' | 'UPDATE' | 'NEXT' | 'NAVBUTTON' | 'ICON';
 
 export type TargetPageType = 'NEW_PAGE' | 'THIS_PAGE';
 

@@ -1,13 +1,17 @@
-<div class="input-container margin-v-{{ spacing }}">
-    <label for="{{ inputId }}">{{ labelText | translate }}</label>
+<div class="input-container margin-v-{{ spacing }}" (click)="activateInput()" [formGroup]="parentForm">
+    <label for="{{ inputId }}" class="{{ focused ? 'focused' : '' }}">{{ labelText | translate }}</label>
     <input
+        *ngIf="formControlNameString"
         [type]="inputType"
         [name]="inputName"
         [id]="inputId"
         class="input"
         [disabled]="isDisabled"
-        [placeholder]="placeHolder | translate"
         [innerText]="inputText"
+        formControlName="{{ formControlNameString }}"
+        (focus)="toggleFocus(true)"
+        (blur)="toggleFocus(false)"
+        #inputRef
     />
     <div *ngIf="CustomValidationMessages && input?.invalid && (input?.dirty || input?.touched) && CustomValidationMessages" class="alert">
         <div *ngIf="input?.errors?.['required']">

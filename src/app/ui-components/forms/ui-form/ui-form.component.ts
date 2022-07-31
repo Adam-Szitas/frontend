@@ -1,6 +1,7 @@
 import { Component, Input, Output } from '@angular/core';
 import { FormInput } from 'src/app/login.interfaces';
 import { EventEmitter } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
     selector: 'app-ui-form',
@@ -9,14 +10,12 @@ import { EventEmitter } from '@angular/core';
 })
 export class UiFormComponent {
     @Input()
-    formInput!: FormInput;
+    formInput: FormInput;
+    @Input()
+    formGroup: FormGroup;
 
     @Output()
-    onSubmit: EventEmitter<Event> = new EventEmitter<Event>();
+    onSubmit: EventEmitter<any> = new EventEmitter<any>();
 
-    public isFormValid: boolean = false;
-
-    public onSubmitForm($event: Event) {
-        this.onSubmit.emit($event);
-    }
+    public onSubmitForm() {}
 }
